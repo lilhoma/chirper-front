@@ -48,7 +48,7 @@ const chirps = await $apiFetch("/api/chirps");
 async function createChirp() {
   try {
     isLoading.value = true;
-    const chirp = await useNuxtApp().$apiFetch(`/api/chirp`, {
+    const chirp = await useNuxtApp().$apiFetch(`/api/chirps`, {
       method: "POST",
       body: {
         message: message.value,

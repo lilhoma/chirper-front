@@ -63,7 +63,11 @@
 </template>
 
 <script setup>
-    const title = useState('title');
+definePageMeta({
+    middleware: ['guest']
+});
+
+const title = useState('title');
 
 const router = useRouter();
 
@@ -95,10 +99,10 @@ async function register() {
       },
     })
 
-    // const user = await $apiFetch('/api/user');
+    const user = await $apiFetch('/api/user');
 
-    // const { setUser } = useAuth();
-    // setUser(user.name);
+    const { setUser } = useAuth();
+    setUser(user.name);
 
     alert('Registered!');
     window.location.pathname = '/my-info'

@@ -16,6 +16,10 @@
 </template>
 
 <script setup>
+definePageMeta({
+    middleware: ['auth']
+});
+
 
 const title = useState('title');
 
